@@ -1,6 +1,6 @@
 {
-  "gear_input_0": {"onChange": "gears.gear_input = gears.swap_bit(gears.gear_input, 0);gears.change_gear()", "title": "1st gear input", "desc": "yes", "cat": "gear_box", "order": 1, "ctx": "vlua"},
-  "gear_input_1": {"onChange": "gears.gear_input = gears.swap_bit(gears.gear_input, 1);gears.change_gear()", "title": "2nd gear input", "desc": "yes", "cat": "gear_box", "order": 2, "ctx": "vlua"},
-  "gear_input_2": {"onChange": "gears.gear_input = gears.swap_bit(gears.gear_input, 2);gears.change_gear()", "title": "3rd gear input", "desc": "yes", "cat": "gear_box", "order": 3, "ctx": "vlua"},
-  "gear_input_3": {"onChange": "gears.gear_input = gears.swap_bit(gears.gear_input, 3);gears.change_gear()", "title": "4th gear input", "desc": "yes", "cat": "gear_box", "order": 4, "ctx": "vlua"},
+  "gear_input_0": {"onChange": "gears.gear_input = gears.swap_bit(gears.gear_input, 0);gears.change_gear()", "title": "1st Gear input", "desc": "yes", "cat": "gearbox", "order": 1, "ctx": "vlua"},
+  "gear_input_1": {"onChange": "gears.gear_input = gears.swap_bit(gears.gear_input, 1);gears.change_gear()", "title": "2nd Gear input", "desc": "yes", "cat": "gearbox", "order": 2, "ctx": "vlua"},
+  "gear_input_2": {"onChange": "gears.gear_input = gears.swap_bit(gears.gear_input, 2);gears.change_gear()", "title": "3rd Gear input", "desc": "yes", "cat": "gearbox", "order": 3, "ctx": "vlua"},
+  "gear_input_3": {"onChange": "gears.gear_input = gears.swap_bit(gears.gear_input, 3);gears.change_gear()", "title": "4th Gear input", "desc": "yes", "cat": "gearbox", "order": 4, "ctx": "vlua"},
 }
