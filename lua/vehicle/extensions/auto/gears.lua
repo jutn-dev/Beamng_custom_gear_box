@@ -33,6 +33,7 @@ function help()
 	print("gears.help() prints this message \ngears.change_gear() changes the gear to value stored in M.gear_input \ngears.print_current_gear() prints the value of M.gear_input \n M.debug can be used to set on debug mode \n M.reverse_gear can be used to change which input number is reverse gear")
 end
 
+M.help = help
 M.change_gear = change_gear
 M.swap_bit = swap_bit
 M.print_current_gear = print_current_gear
