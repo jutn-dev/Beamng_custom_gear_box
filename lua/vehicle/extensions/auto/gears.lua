@@ -1,17 +1,35 @@
 local M = {}
 
 M.gear_input = 0
-M.debug = false
+M.debug = true
 M.reverse_gear = 15
-function change_gear()
+-- if timer is minus it is disabled
+M.gear_timer = 0
+-- the time it takes to change a gear after the action
+M.gear_swaptime = 0.3
+function onUpdate()
+  if M.gear_timer > 0 then
+  	if os.clock() > M.gear_timer then
+	  apply_gear()
+	  M.gear_timer = -1
+  	end
+  end
+end
+
+function change_gear_bit(gear)
+  M.gear_input = swap_bit(M.gear_input, gear)
+  M.gear_timer = tonumber(os.clock() + M.gear_swaptime)
+end
+
+function apply_gear()
   if M.debug then
-	if M.gear_input == reverse_gear then
+	if M.gear_input == M.reverse_gear then
 		print("switching to gear: R")
 	else
 		print("switching to gear: "..bit.tobit(M.gear_input))
 	end
   end
-  if M.gear_input == reverse_gear then
+  if M.gear_input == M.reverse_gear then
 	controller.mainController.shiftToGearIndex(bit.tobit(-1))
   else
 	controller.mainController.shiftToGearIndex(bit.tobit(M.gear_input))
@@ -34,8 +52,10 @@ function help()
 end
 
 M.help = help
-M.change_gear = change_gear
+M.apply_gear = apply_gear
+M.change_gear_bit = change_gear_bit
 M.swap_bit = swap_bit
 M.print_current_gear = print_current_gear
+M.updateGFX = onUpdate
 
 return M
