@@ -6,7 +6,7 @@ M.reverse_gear = 15
 function change_gear()
   if M.debug then
 	if M.gear_input == reverse_gear then
-		print("switching to gear: R"))
+		print("switching to gear: R")
 	else
 		print("switching to gear: "..bit.tobit(M.gear_input))
 	end
