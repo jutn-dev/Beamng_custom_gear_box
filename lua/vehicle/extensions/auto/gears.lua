@@ -31,9 +31,11 @@ function change_gear_bit(gear, value)
   if joystick_mode then
   	if gear == 0 or gear == 2 then
 	  if value < 0.5 then
+		print("00")
 		M.gear_input = swap_bit(M.gear_input, 0)
 	  end
 	  if value > -0.5 then
+		print("20")
 		M.gear_input = swap_bit(M.gear_input, 2)
 	  end
 	end
