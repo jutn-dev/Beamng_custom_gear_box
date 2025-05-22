@@ -56,25 +56,25 @@ function apply_gear()
   if M.joystick_mode then
 	if M.gear_input == 5 then
 	  controller.mainController.shiftToGearIndex(bit.tobit(1))
-    else
+    end
 	if M.gear_input == 15 then
 	  controller.mainController.shiftToGearIndex(bit.tobit(2))
-    else
+    end
 	if M.gear_input == 3 then
 	  controller.mainController.shiftToGearIndex(bit.tobit(3))
-    else
+    end
 	if M.gear_input == M.reverse_gear then
 	  controller.mainController.shiftToGearIndex(bit.tobit(-1))
-    else
+    end
 	if M.gear_input == M.reverse_gear then
 	  controller.mainController.shiftToGearIndex(bit.tobit(-1))
-    else
+    end
 	if M.gear_input == M.reverse_gear then
 	  controller.mainController.shiftToGearIndex(bit.tobit(-1))
-    else
+    end
 	if M.gear_input == M.reverse_gear then
 	  controller.mainController.shiftToGearIndex(bit.tobit(-1))
-    else
+    end
 	if M.gear_input == M.reverse_gear then
 	  controller.mainController.shiftToGearIndex(bit.tobit(-1))
     end
