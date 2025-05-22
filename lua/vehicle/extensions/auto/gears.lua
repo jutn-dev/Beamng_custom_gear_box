@@ -77,7 +77,7 @@ function apply_gear()
     else
 	if M.gear_input == M.reverse_gear then
 	  controller.mainController.shiftToGearIndex(bit.tobit(-1))
-    else
+    end
 
   else
     if M.debug then
