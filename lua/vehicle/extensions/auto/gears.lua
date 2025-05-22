@@ -26,7 +26,7 @@ end
 function change_gear_bit(gear, value)
   --print("G "..gear)
   --print("V "..value)
-
+  M.gear_timer = tonumber(os.clock() + M.gear_swaptime)
 --please do not use this mode if not needed
   if M.joystick_mode == true then
   	if gear == 0 or gear == 2 then
@@ -54,9 +54,8 @@ function change_gear_bit(gear, value)
 --not joystick mode
   else
 	print("jmsefjolesijfoseijfosejfsoijfoisfuiksjfoijse")
-	--M.gear_input = swap_bit(M.gear_input, gear)
+	M.gear_input = swap_bit(M.gear_input, gear)
   end
-  M.gear_timer = tonumber(os.clock() + M.gear_swaptime)
 end
 
 function apply_gear()
