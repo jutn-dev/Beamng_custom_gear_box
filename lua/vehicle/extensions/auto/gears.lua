@@ -53,6 +53,7 @@ function change_gear_bit(gear, value)
 end
 
 function apply_gear()
+  print("switching to gear: "..bit.tobit(M.gear_input))
   if M.joystick_mode then
 	if M.gear_input == 5 then
 	  controller.mainController.shiftToGearIndex(bit.tobit(1))
