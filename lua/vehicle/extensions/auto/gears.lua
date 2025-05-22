@@ -7,6 +7,8 @@ M.reverse_gear = 15
 M.gear_timer = 0
 -- the time it takes to change a gear after the action
 M.gear_swaptime = 0.3
+-- so it works with one joysitck 
+-- WARINING THIS MODE IS TERRABLE and jank
 M.joystick_mode = true
 function onUpdate()
   if M.gear_timer > 0 then
@@ -23,18 +25,26 @@ end
 function change_gear_bit(gear, value)
   print("G "..gear)
   print("V "..value)
-
+  
+--please do not use this mode if not needed
   if joystick_mode then
   	if gear == 0 || gear == 2 then
-	  if value > 0 then
+	  if value > 0.5 then
 		M.gear_input = swap_bit(M.gear_input, 0)
-	  else
-
+	  end
+	  if value < -0.5 then
+		M.gear_input = swap_bit(M.gear_input, 2)
 	  end
 	end
 	if gear == 1 || gear == 3 then
-  	
+  	  if value > 0.5 then
+		M.gear_input = swap_bit(M.gear_input, 1)
+	  end
+	  if value < -0.5 then
+		M.gear_input = swap_bit(M.gear_input, 3)
+	  end
 	end	
+--not joystick mode
   else
 	M.gear_input = swap_bit(M.gear_input, gear)
   end
