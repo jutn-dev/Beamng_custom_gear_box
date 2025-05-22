@@ -60,7 +60,7 @@ function apply_gear()
 	if M.gear_input == 15 then
 	  controller.mainController.shiftToGearIndex(bit.tobit(2))
     else
-	if M.gear_input ==  then
+	if M.gear_input == 3 then
 	  controller.mainController.shiftToGearIndex(bit.tobit(3))
     else
 	if M.gear_input == M.reverse_gear then
