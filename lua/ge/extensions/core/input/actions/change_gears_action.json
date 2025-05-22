@@ -1,6 +1,6 @@
 {
-  "gear_input_0": {"onChange": "gears.change_gear_bit(0, VALUE)", "title": "1st Gear input", "desc": "yes", "cat": "gearbox", "order": 1, "ctx": "vlua"},
-  "gear_input_1": {"onChange": "gears.change_gear_bit(1, VALUE)", "title": "2nd Gear input", "desc": "yes", "cat": "gearbox", "order": 2, "ctx": "vlua"},
-  "gear_input_2": {"onChange": "gears.change_gear_bit(2, VALUE)", "title": "3rd Gear input", "desc": "yes", "cat": "gearbox", "order": 3, "ctx": "vlua"},
-  "gear_input_3": {"onChange": "gears.change_gear_bit(3, VALUE)", "title": "4th Gear input", "desc": "yes", "cat": "gearbox", "order": 4, "ctx": "vlua"},
+  "gear_input_0": {"onChange": "gears.change_gear_bit(0, VALUE)","isCentered":true, "title": "1st Gear input", "desc": "yes", "cat": "gearbox", "order": 1, "ctx": "vlua"},
+  "gear_input_1": {"onChange": "gears.change_gear_bit(1, VALUE)","isCentered":true, "title": "2nd Gear input", "desc": "yes", "cat": "gearbox", "order": 2, "ctx": "vlua"},
+  "gear_input_2": {"onChange": "gears.change_gear_bit(2, VALUE)","isCentered":true, "title": "3rd Gear input", "desc": "yes", "cat": "gearbox", "order": 3, "ctx": "vlua"},
+  "gear_input_3": {"onChange": "gears.change_gear_bit(3, VALUE)","isCentered":true, "title": "4th Gear input", "desc": "yes", "cat": "gearbox", "order": 4, "ctx": "vlua"},
 }

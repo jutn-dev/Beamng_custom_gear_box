@@ -35,8 +35,9 @@ function change_gear_bit(gear, value)
 	if gear == 1 || gear == 3 then
   	
 	end	
+  else
+	M.gear_input = swap_bit(M.gear_input, gear)
   end
-  M.gear_input = swap_bit(M.gear_input, gear)
   M.gear_timer = tonumber(os.clock() + M.gear_swaptime)
 end
 
@@ -70,7 +71,7 @@ function help()
 	print("gears.help() prints this message \ngears.change_gear() changes the gear to value stored in M.gear_input \ngears.print_current_gear() prints the value of M.gear_input \n M.debug can be used to set on debug mode \n M.reverse_gear can be used to change which input number is reverse gear")
 end
 
-functon reset()
+function reset()
 	M.gear_input = 0
 	M.debug = true
 	M.reverse_gear = 15
@@ -78,6 +79,7 @@ functon reset()
 	M.gear_swaptime = 0.3
 end
 
+M.reset = reset
 M.help = help
 M.apply_gear = apply_gear
 M.change_gear_bit = change_gear_bit
