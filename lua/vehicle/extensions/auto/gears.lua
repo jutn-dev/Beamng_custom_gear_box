@@ -24,32 +24,37 @@ end
 -- in joystck mode 0 and 2 are the same
 -- in joystck mode 1 and 3 are the same
 function change_gear_bit(gear, value)
-  print("G "..gear)
-  print("V "..value)
+  --print("G "..gear)
+  --print("V "..value)
 
 --please do not use this mode if not needed
   if joystick_mode then
   	if gear == 0 or gear == 2 then
+	  print("02")
 	  if value < 0.5 then
-		print("00")
+		print("0")
 		M.gear_input = swap_bit(M.gear_input, 0)
 	  end
 	  if value > -0.5 then
-		print("20")
+		print("2")
 		M.gear_input = swap_bit(M.gear_input, 2)
 	  end
 	end
 	if gear == 1 or gear == 3 then
+	  print("13")
   	  if value < 0.5 then
+		print("1")
 		M.gear_input = swap_bit(M.gear_input, 1)
 	  end
 	  if value > -0.5 then
+		print("3")
 		M.gear_input = swap_bit(M.gear_input, 3)
 	  end
 	end	
 --not joystick mode
   else
-	M.gear_input = swap_bit(M.gear_input, gear)
+	print("jmsefjolesijfoseijfosejfsoijfoisfuiksjfoijse")
+	--M.gear_input = swap_bit(M.gear_input, gear)
   end
   M.gear_timer = tonumber(os.clock() + M.gear_swaptime)
 end
