@@ -9,6 +9,7 @@ M.gear_timer = 0
 M.gear_swaptime = 0.3
 -- so it works with one joysitck 
 -- WARINING THIS MODE IS TERRABLE and jank
+-- IF USING this please map input 0 (1st) and input 2 (3rd) to same axies, but other ends
 M.joystick_mode = true
 function onUpdate()
   if M.gear_timer > 0 then
@@ -29,18 +30,18 @@ function change_gear_bit(gear, value)
 --please do not use this mode if not needed
   if joystick_mode then
   	if gear == 0 or gear == 2 then
-	  if value > 0.5 then
+	  if value < 0.5 then
 		M.gear_input = swap_bit(M.gear_input, 0)
 	  end
-	  if value < -0.5 then
+	  if value > -0.5 then
 		M.gear_input = swap_bit(M.gear_input, 2)
 	  end
 	end
 	if gear == 1 or gear == 3 then
-  	  if value > 0.5 then
+  	  if value < 0.5 then
 		M.gear_input = swap_bit(M.gear_input, 1)
 	  end
-	  if value < -0.5 then
+	  if value > -0.5 then
 		M.gear_input = swap_bit(M.gear_input, 3)
 	  end
 	end	
@@ -52,17 +53,45 @@ function change_gear_bit(gear, value)
 end
 
 function apply_gear()
-  if M.debug then
+  if M.joystick_mode then
+	if M.gear_input == 5 then
+	  controller.mainController.shiftToGearIndex(bit.tobit(1))
+    else
+	if M.gear_input == 15 then
+	  controller.mainController.shiftToGearIndex(bit.tobit(2))
+    else
+	if M.gear_input ==  then
+	  controller.mainController.shiftToGearIndex(bit.tobit(3))
+    else
 	if M.gear_input == M.reverse_gear then
-		print("switching to gear: R")
-	else
-		print("switching to gear: "..bit.tobit(M.gear_input))
-	end
-  end
-  if M.gear_input == M.reverse_gear then
-	controller.mainController.shiftToGearIndex(bit.tobit(-1))
+	  controller.mainController.shiftToGearIndex(bit.tobit(-1))
+    else
+	if M.gear_input == M.reverse_gear then
+	  controller.mainController.shiftToGearIndex(bit.tobit(-1))
+    else
+	if M.gear_input == M.reverse_gear then
+	  controller.mainController.shiftToGearIndex(bit.tobit(-1))
+    else
+	if M.gear_input == M.reverse_gear then
+	  controller.mainController.shiftToGearIndex(bit.tobit(-1))
+    else
+	if M.gear_input == M.reverse_gear then
+	  controller.mainController.shiftToGearIndex(bit.tobit(-1))
+    else
+
   else
-	controller.mainController.shiftToGearIndex(bit.tobit(M.gear_input))
+    if M.debug then
+	  if M.gear_input == M.reverse_gear then
+	  	print("switching to gear: R")
+	  else
+	  	print("switching to gear: "..bit.tobit(M.gear_input))
+	  end
+    end
+    if M.gear_input == M.reverse_gear then
+	  controller.mainController.shiftToGearIndex(bit.tobit(-1))
+    else
+	  controller.mainController.shiftToGearIndex(bit.tobit(M.gear_input))
+    end
   end
 end
 
