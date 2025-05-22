@@ -28,25 +28,25 @@ function change_gear_bit(gear, value)
   --print("V "..value)
 
 --please do not use this mode if not needed
-  if joystick_mode then
+  if M.joystick_mode == true then
   	if gear == 0 or gear == 2 then
 	  print("02")
-	  if value < 0.5 then
+	  if value > 0.5 then
 		print("0")
 		M.gear_input = swap_bit(M.gear_input, 0)
 	  end
-	  if value > -0.5 then
+	  if value < -0.5 then
 		print("2")
 		M.gear_input = swap_bit(M.gear_input, 2)
 	  end
 	end
 	if gear == 1 or gear == 3 then
 	  print("13")
-  	  if value < 0.5 then
+  	  if value > 0.5 then
 		print("1")
 		M.gear_input = swap_bit(M.gear_input, 1)
 	  end
-	  if value > -0.5 then
+	  if value < -0.5 then
 		print("3")
 		M.gear_input = swap_bit(M.gear_input, 3)
 	  end
@@ -61,7 +61,7 @@ end
 
 function apply_gear()
   print("switching to gear: "..bit.tobit(M.gear_input))
-  if M.joystick_mode then
+  if M.joystick_mode == true then
 	if M.gear_input == 5 then
 	  controller.mainController.shiftToGearIndex(bit.tobit(1))
     end
