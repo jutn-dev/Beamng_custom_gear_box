@@ -31,14 +31,14 @@ function change_gear_bit(gear, value)
   if M.joystick_mode == true then
   	if gear == 0 or gear == 2 then
 	  print("02")
-	  if value > 0.5 then
+	  elseif value > 0.5 then
 		print("0")
 		M.gear_input = swap_bit(M.gear_input, 0)
-	  end
-	  if value < -0.5 then
+	  elseif value < -0.5 then
 		print("2")
 		M.gear_input = swap_bit(M.gear_input, 2)
-	  end
+	  else 
+
 	end
 	if gear == 1 or gear == 3 then
 	  print("13")
@@ -109,6 +109,10 @@ end
 function swap_bit(num, index)
   local mask = bit.lshift(1, index)
   return bit.bxor(num, mask)
+end
+
+function set_bit_zero()
+	bit.band(M.gear_input, bit.bnot(bit.lshift(1, bit_pos)))
 end
 
 function help()
